@@ -22,10 +22,6 @@ variable "instance-tag-name" {
   default     = "EC2-instance-created-with-terraform"
 }
  
-variable "vpc_id" {
-  type = string
-}
-
 variable "subnet-cidr-block" {
   description = "The CIDR block to associate to the subnet"
   type        = string
