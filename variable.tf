@@ -21,15 +21,9 @@ variable "instance-tag-name" {
   type        = string
   default     = "EC2-instance-created-with-terraform"
 }
-
-data aws_vpc existing {
-    id = var.in_vpc_id       //172.31.0.0/16
-}
  
-variable in_vpc_id {
-  description = "existing vpc id"
-  type        = string
-  default     = "vpc-0ecbe74ef4008e3aa"
+variable "vpc_id" {
+  type = string
 }
 
 variable "subnet-cidr-block" {
