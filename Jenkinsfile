@@ -6,6 +6,14 @@ pipeline {
                 git 'https://github.com/Strvsuri/hackathon-starter.git'
             }
         }
+        stage {
+            when {
+                branch 'master';
+            }
+            steps {
+                echo 'build on master'
+            }
+        }
         /*stage ('IAC stage-main server') {
             when {
                 branch 'develop';
