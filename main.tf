@@ -38,7 +38,7 @@ resource "aws_subnet" "subnet" {
 
 resource "aws_security_group" "sg" {
   name   = "${var.sg-tag-name}"
-  vpc_id = "${aws_vpc.existing.id}"
+  vpc_id = "aws_vpc.existing.id"
 
   ingress {
     protocol    = "tcp"
