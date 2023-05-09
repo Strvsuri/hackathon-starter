@@ -28,7 +28,7 @@ resource "aws_instance" "my-ec2" {
 }
 
 resource "aws_subnet" "subnet" {
-  vpc_id     = "aws_vpc.existing.id"
+  vpc_id     = "vpc-0ecbe74ef4008e3aa"
   cidr_block = "${var.subnet-cidr-block}"
 
   tags = {
@@ -38,7 +38,7 @@ resource "aws_subnet" "subnet" {
 
 resource "aws_security_group" "sg" {
   name   = "${var.sg-tag-name}"
-  vpc_id = "aws_vpc.existing.id"
+  vpc_id = "vpc-0ecbe74ef4008e3aa"
 
   ingress {
     protocol    = "tcp"
