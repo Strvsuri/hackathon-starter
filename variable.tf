@@ -13,7 +13,7 @@ variable "instance-type" {
 variable "instance-key-name" {
   description = "The name of the SSH key to associate to the instance. Note that the key must exist already."
   type        = string
-  default     = "pathofkeyXXXXXXXXXXXXXXXXX"
+  default     = "/opt/terraform/key"
 }
 
 variable "instance-tag-name" {
