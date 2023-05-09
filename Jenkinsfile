@@ -11,7 +11,10 @@ pipeline {
                 branch 'master';
             }
             steps {
-                echo 'build on master'
+               sh """
+               echo "build on master"
+               """
+            
             }
         }
         /*stage ('IAC stage-main server') {
