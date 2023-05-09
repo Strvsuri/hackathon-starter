@@ -13,7 +13,7 @@ variable "instance-type" {
 variable "instance-key-name" {
   description = "The name of the SSH key to associate to the instance. Note that the key must exist already."
   type        = string
-  default     = "/opt/terraform/key"
+  default     = "/opt/terraform/ansible-master.pem"
 }
 
 variable "instance-tag-name" {
