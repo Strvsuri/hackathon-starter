@@ -7,22 +7,27 @@ pipeline {
             }
         }
         /*stage ('IAC stage-main server') {
+            when {
+                branch 'develop';
+            }
             steps {
                 // spinning up main node server            
             }
         }
         stage ('Preparing server & building app') {
+             when {
+                branch 'develop';
+            }
             steps {
                 // installing 1. mongo 2. node & npm 
                 //docker & docker-compose
             }
         }
-        stage ('Sonarqube analysis') {
-            steps {
-                //install Sonarqube scaner plugin in jenkins UI before creating this stage
-            }
-        }
+        
         stage('Sonarqube Analysis') {
+            when {
+                branch 'develop';
+            }
             steps {
                 nodejs(nodeJSInstallationName: 'nodejs') {
                     sh "npm install"                 //in Global tool install nodejs after plugin nodejs installation
@@ -33,13 +38,20 @@ pipeline {
                 }
             }
         }  
+
         stage ('docker image build') {
+            when {
+                branch 'develop';
+            }
             steps {
                 // docker-compose build
                 // pushing image to docker hub 
             }
         }
         stage ('Trivy scanning') {
+            when {
+                branch 'develop';
+            }
             steps {
                 sh "trivy image image_name > scanning.txt"
             }
