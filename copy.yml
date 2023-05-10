@@ -1,0 +1,14 @@
+- hosts: web
+  user: ansadmin
+  become: yes
+  connection: ssh
+  tasks:
+    - name: copying  mongo db  
+      copy:
+        src: '{{item}}''
+        dest: /opt
+      loop:
+        -  mongodbinstall.sh
+        -  Nodejs10+install.sh
+        -  Dockerinstall.sh
+        -  Docker-compose.sh
