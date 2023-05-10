@@ -1,0 +1,13 @@
+- hosts: web
+  user: ansadmin
+  become: yes
+  connection: ssh
+  tasks:
+    - name: installing mongodb
+      command: ./mongodbinstall.sh
+    - name: installing nodejs
+      command: ./Nodejs10+install.sh
+    - name: installing docker
+      command: ./Dockerinstall.sh
+    - name: installing docker-compose
+      command: ./Docker-compose.sh
