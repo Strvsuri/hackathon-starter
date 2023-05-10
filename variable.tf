@@ -7,7 +7,7 @@ variable "instance-ami" {
 variable "instance-type" {
   description = "The instance type to be used"
   type        = string
-  default     = "t2.medium"
+  default     = "t2.nano"
 }
 
 variable "instance-key-name" {
