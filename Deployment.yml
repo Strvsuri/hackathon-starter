@@ -16,7 +16,9 @@ template:
   spec:
     containers:
       - name: mycont
-        image: suribau/web:v1.12
+        image: suribau/web:v1.14
+        ports:
+          -  containerPort: 8080 
         env:
         - name: MONGODB_URI
           valueFrom:
