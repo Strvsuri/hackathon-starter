@@ -1,4 +1,4 @@
-# configmap as volume 
+# configmap as env variable
 kind: Deployment
 apiversion: aaps/v1
 metadata:
