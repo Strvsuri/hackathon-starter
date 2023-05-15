@@ -1,6 +1,6 @@
 # configmap as env variable
 kind: Deployment
-apiversion: aaps/v1
+apiVersion: aaps/v1
 metadata:
   name: mywebdeploy
 spec:
