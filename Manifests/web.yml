@@ -17,7 +17,7 @@ metadata:
 spec:
   replicas: 1
   selector:
-    matchLabels
+    matchLabels:
       env: dev
   template:
     metadata:
