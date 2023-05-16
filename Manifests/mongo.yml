@@ -26,7 +26,6 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  creationTimestamp: null
   labels:
     app: mongo
   name: mongo
@@ -38,7 +37,6 @@ spec:
   strategy: {}
   template:
     metadata:
-      creationTimestamp: null
       labels:
         app: mongo
     spec:
@@ -47,31 +45,6 @@ spec:
         name: mongo
         ports:
           -  containerport: 27017
-        args: ["--dbpath","/data/db"]
-        livenessProbe:
-          exec:
-            command:
-              - mongo
-              - --disableImplicitSessions
-              - --eval
-              - "db.adminCommand('ping')"
-          initialDelaySeconds: 30
-          periodSeconds: 10
-          timeoutSeconds: 5
-          successThreshold: 1
-          failureThreshold: 6
-        readinessProbe:
-          exec:
-            command:
-              - mongo
-              - --disableImplicitSessions
-              - --eval
-              - "db.adminCommand('ping')"
-          initialDelaySeconds: 30
-          periodSeconds: 10
-          timeoutSeconds: 5
-          successThreshold: 1
-          failureThreshold: 6
         volumeMounts:
         - name: "mongo-data-dir"
           mountPath: "/data/db"
