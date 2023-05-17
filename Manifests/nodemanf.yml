@@ -1,9 +1,9 @@
 kind: Deployment 
 apiVersion: apps/v1
 metadata:
-  name: nodeapp
+  name: nodedep
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchExpressions:
       - {key: env, operator: In, values: [test]}
@@ -22,7 +22,7 @@ spec:
 kind: Service 
 apiVersion: v1 
 metadata:
-  name: ngsvc
+  name: nodesvc
 spec:
   ports:
     - port: 80
