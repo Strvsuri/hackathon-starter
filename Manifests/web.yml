@@ -32,5 +32,5 @@ spec:
             -  containerPort: 8080
           env:
             - name: MONGO_URL
-              value: mongodb://54.147.248.27:27017/development
+              value: mongodb://23.22.53.60:27017/development
           imagePullPolicy: Always
