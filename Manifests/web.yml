@@ -27,7 +27,7 @@ spec:
     spec:
       containers:
         - name: mycont
-          image: suribau/project_web:v1.16
+          image: suribau/project_web:v1.17
           ports:
             -  containerPort: 8080
           env:
