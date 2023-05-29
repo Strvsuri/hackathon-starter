@@ -16,10 +16,16 @@ spec:
         - name: nodejs-app
           image: suribau/myproject_web:v1.22
           env:
-            - name: SESSION_SECRET
-              value: P5qVo45L/32hCnT+ojTL6HTEoJgKe7eK7i2ilayKtZY=
             - name: MONGODB_URI
-              value: mongodb://3.87.15.90:27017/test
+              valueFrom:
+                configMapKeyRef:
+                  name: my-config
+                  key: MONGODB_URI
+            - name: SESSION_SECRET
+              valueFrom:
+                secretKeyRef:
+                  name: mongodb-secret
+                  key: SESSION_SECRET
           ports:
             - containerPort: 8000
 
@@ -37,4 +43,4 @@ spec:
       port: 8080
       targetPort: 8080
       nodePort: 30020
-
+      
