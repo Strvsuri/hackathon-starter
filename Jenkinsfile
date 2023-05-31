@@ -1,7 +1,7 @@
 pipeline {
     agent any
     stages {
-        stage ('git checkout') {
+        /*stage ('git checkout') {
             steps {
                 git 'https://github.com/Strvsuri/hackathon-starter.git'
             }
@@ -16,7 +16,7 @@ pipeline {
                     sh 'terraform apply'
                 }           
             }
-        }
+        }  
 
         stage ('installinmongodb,docker,compose') {
             steps {
@@ -27,7 +27,7 @@ pipeline {
                     sh "ansible-playbook installationplay.yml"                   
                 }           
             }
-        }
+        } */
 
         stage ('Getting started & NPM dependency') {
             steps {
