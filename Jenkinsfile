@@ -6,7 +6,7 @@ pipeline {
                 sshagent(['ba46ae8a-c439-465e-81b4-14d2d43ca568']) {
                     sh 'ssh -o StrictHostKeyChecking=no ubuntu@172.31.29.49'
                     //sh 'ssh -o StrictHostKeyChecking=no ubuntu@172.31.29.49 git clone https://github.com/Strvsuri/hackathon-starter.git myproject'
-                    sh 'ssh -o StrictHostKeyChecking=no ubuntu@172.31.29.49 cd myproject && npm install '
+                    sh 'ssh -o StrictHostKeyChecking=no ubuntu@172.31.29.49 cd myproject && npm install'
                     //sh 'ssh -o StrictHostKeyChecking=no ubuntu@172.31.29.49 node app.js'
                     //install dependencies & start app from CLI
                 }
