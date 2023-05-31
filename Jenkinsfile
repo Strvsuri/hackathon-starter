@@ -1,7 +1,24 @@
 pipeline {
     agent any
     stages {
-        /*stage ('git checkout') {
+        stage('Building app') {
+            steps {
+                sshagent(['ba46ae8a-c439-465e-81b4-14d2d43ca568']) {
+                    sh 'ssh -o StrictHostKeyChecking=no ubuntu@172.31.29.49'
+                    //sh 'ssh -o StrictHostKeyChecking=no ubuntu@172.31.29.49 git clone https://github.com/Strvsuri/hackathon-starter.git myproject'
+                    sh 'ssh -o StrictHostKeyChecking=no user1@172.31.86.65 cd myproject'
+                    sh 'ssh -o StrictHostKeyChecking=no user1@172.31.86.65 npm install'
+                    sh 'ssh -o StrictHostKeyChecking=no user1@172.31.86.65 node app.js'
+                    //install dependencies & start app from CLI
+                }
+            }
+        }
+    }
+}
+/*pipeline {
+    agent any
+    stages {
+        stage ('git checkout') {
             steps {
                 git 'https://github.com/Strvsuri/hackathon-starter.git'
             }
@@ -27,7 +44,7 @@ pipeline {
                     sh "ansible-playbook installationplay.yml"                   
                 }           
             }
-        } */
+        }
 
         stage ('Getting started & NPM dependency') {
             steps {
@@ -105,4 +122,4 @@ pipeline {
         }
 
     }
-}
+}*/
