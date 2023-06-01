@@ -5,11 +5,6 @@ pipeline {
     }
     stages {
         stage('Building app') {
-             agent {
-                docker {
-                    image 'node:10-stretch'
-                }
-            }
             steps {
                 sshagent(['nodeapp']) {
                     sh 'ssh -o StrictHostKeyChecking=no ubuntu@172.31.95.196'
