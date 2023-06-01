@@ -1,7 +1,7 @@
 pipeline {
     agent any
      tools {
-        nodejs 'node-10.19.0'
+        node 'node-10.19.0'
     }
     stages {
         stage('Building app') {
