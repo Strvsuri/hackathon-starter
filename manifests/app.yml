@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: nodejs-app
-          image: suribau/myproject_web:v1.22
+          image: suribau/myproject_web:v1.25
           env:
             - name: MONGODB_URI
               valueFrom:
