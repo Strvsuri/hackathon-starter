@@ -1,0 +1,40 @@
+namespace: default
+
+apps:
+  nodeapp:
+    repositorytag: suribau/myproject_web:v1.22
+    name: nodejs-app
+    replicaCount: 1
+    containerport: 8080
+  pullPolicy: Always
+
+
+
+database:
+  mongo:
+    Name: mongodb
+    image: mongo:3.6
+    replicas: 1
+    containerport: 27017
+    url: mongodb://3.87.15.90:27017/test
+
+
+service:
+  nodeapp:
+    name: nodeapp-service
+    type: NodePort
+    protocol: TCP
+    externalPort: 8080   #port
+    internalPort: 8080   #targetport
+    nodeport: 30020
+    servicetype: NodePort
+  
+  database:
+    protocol: TCP
+    externalPort: 27017   #port
+    internalPort: 27017   #targetport
+
+env:
+  name: dev
+
+tolerations: []
