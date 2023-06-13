@@ -3,4 +3,4 @@ kind: ConfigMap
 metadata:
   name: my-config
 data:
-  MONGODB_URI: mongodb://3.87.15.90:27017/test   
+  MONGODB_URI: mongodb://54.88.235.121:27017/test   
