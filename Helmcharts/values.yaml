@@ -2,7 +2,7 @@ namespace: default
 
 apps:
   nodeapp:
-    repositorytag: suribau/myproject_web:v1.22
+    repositorytag: suribau/myproject_web:v1.25
     name: nodejs-app
     replicaCount: 1
     containerport: 8080
