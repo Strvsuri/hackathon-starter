@@ -16,7 +16,7 @@ database:
     image: mongo:3.6
     replicas: 1
     containerport: 27017
-    url: mongodb://3.87.15.90:27017/test
+    url: mongodb://44.201.192.130:27017/test
 
 
 service:
