@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ .Values.service.nodeapp.name }}
+spec:
+  type: {{ .Values.service.nodeapp.type }}
+  selector:
+    app: nodejs-app
+  ports:
+    - protocol: {{ .Values.service.nodeapp.protocol }}
+      port: {{ .Values.service.nodeapp.externalPort }}
+      targetPort: {{ .Values.service.nodeapp.internalPort }}
+      nodePort: {{ .Values.service.nodeapp.nodeport }}
