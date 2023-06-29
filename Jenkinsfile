@@ -66,21 +66,15 @@ pipeline {
 
         stage('Sonarqube Analysis') {
             steps {
-                script {
-                     try {
-                         nodejs(nodeJSInstallationName: 'nodejs') {                    
-                             sh "npm install"                //in Global tool install nodejs after plugin nodejs installation 
-                     } catch (Exception e) {
-                         echo "Error occurred: ${e.getMessage()}"
-                     }
-                          withsonarQubeEnv('sonar') {      //same name as in jenkins configuration: sonar 
-                              sh "npm install sonar-scanner"
-                              sh "npm run sonar"
-                          }   
+                nodejs(nodeJSInstallationName: 'nodejs') {                    
+                    sh "npm install "                //in Global tool install nodejs after plugin nodejs installation                    
+                    withsonarQubeEnv('sonar') {      //same name as in jenkins configuration: sonar 
+                        sh "npm install sonar-scanner"
+                        sh "npm run sonar"
+                    }
                 }
             }
         }
-
 
         /*stage ('Trivy scanning') {
             //install TRIVY on the server
