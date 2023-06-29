@@ -22,7 +22,7 @@ pipeline {
         } */ 
 
 
-        stage('Building app') {
+        /*stage('Building app') {
             steps {
                 sshagent(['nodeapp']) {
                     sh 'ssh -o StrictHostKeyChecking=no ubuntu@172.31.95.196'                    
@@ -30,7 +30,7 @@ pipeline {
                     sh 'ssh -o StrictHostKeyChecking=no ubuntu@172.31.95.196 cd /home/ubuntu/myproject && node app.js'   
                 }
             }
-        }
+        }*/
         
  
 
