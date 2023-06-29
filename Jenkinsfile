@@ -27,7 +27,8 @@ pipeline {
             steps {
                 sshagent(['nodeapp']) {
                     sh 'ssh -o StrictHostKeyChecking=no ubuntu@172.31.95.196'
-                    sh 'ssh -o StrictHostKeyChecking=no ubuntu@172.31.95.196 cd /home/ubuntu/myproject && docker-compose build web:v1.$BUILD_ID'
+                    sh 'docker ps'
+                    //sh 'ssh -o StrictHostKeyChecking=no ubuntu@172.31.95.196 cd /home/ubuntu/myproject && docker-compose build web:v1.$BUILD_ID'
                     // maintaining version with jenkin parameters
                 }                
             }
