@@ -21,8 +21,8 @@ pipeline {
             steps {
                 sshagent(['nodeapp']) {
                     sh 'ssh -o StrictHostKeyChecking=no ubuntu@172.31.95.196'                    
-                    sh 'ssh -o StrictHostKeyChecking=no ubuntu@172.31.95.196 cd myproject && npm install'
-                    sh 'ssh -o StrictHostKeyChecking=no ubuntu@172.31.95.196 cd myproject && node app.js'   
+                    sh 'ssh -o StrictHostKeyChecking=no ubuntu@172.31.95.196 cd /home/ubuntu/myproject && npm install'
+                    sh 'ssh -o StrictHostKeyChecking=no ubuntu@172.31.95.196 cd /home/ubuntu/myproject && node app.js'   
                 }
             }
         }
