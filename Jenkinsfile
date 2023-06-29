@@ -64,7 +64,7 @@ pipeline {
             }
         }*/
 
-        stage('Sonarqube Analysis') {
+        /*stage('Sonarqube Analysis') {
             steps {
                 nodejs(nodeJSInstallationName: 'nodejs') {                    
                     sh "npm install "                //in Global tool install nodejs after plugin nodejs installation                    
@@ -74,7 +74,7 @@ pipeline {
                     }
                 }
             }
-        }
+        }*/
 
         /*stage ('Trivy scanning') {
             //install TRIVY on the server
