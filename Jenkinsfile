@@ -17,7 +17,7 @@ pipeline {
         } */ 
 
 
-        stage('Building app') {
+       /* stage('Building app') {
             steps {
                 sshagent(['nodeapp']) {
                     sh 'ssh -o StrictHostKeyChecking=no ubuntu@172.31.95.196'                    
@@ -25,7 +25,7 @@ pipeline {
                     sh 'ssh -o StrictHostKeyChecking=no ubuntu@172.31.95.196 cd myproject && node app.js'   
                 }
             }
-        }
+        }*/
  
 
         /*stage ('docker image build') {
@@ -62,7 +62,7 @@ pipeline {
                     }
                 }
             }
-        }
+        }*/
 
         stage('Sonarqube Analysis') {
             steps {
@@ -77,7 +77,7 @@ pipeline {
         }
 
 
-        stage ('Trivy scanning') {
+        /*stage ('Trivy scanning') {
             //install TRIVY on the server
             steps {
                 sshagent(['nodeapp']) {
