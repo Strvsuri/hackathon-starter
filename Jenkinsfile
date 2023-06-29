@@ -66,8 +66,8 @@ pipeline {
 
         stage('Sonarqube Analysis') {
             steps {
-                //nodejs(nodeJSInstallationName: 'nodejs') {
-                   // sh "npm install"                 //in Global tool install nodejs after plugin nodejs installation
+                nodejs(nodeJSInstallationName: 'nodejs') {
+                    sh "npm install"                 //in Global tool install nodejs after plugin nodejs installation
                     withsonarQubeEnv('sonar') {      //same name as in jenkins configuration: sonar 
                         sh "npm install sonar-scanner"
                         sh "npm run sonar"
