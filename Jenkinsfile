@@ -66,15 +66,17 @@ pipeline {
 
         stage('Sonarqube Analysis') {
             steps {
-                nodejs(nodeJSInstallationName: 'nodejs') {
-                    sh "npm fund"
-                    sh "npm audit fix --force"
-                    sh "npm install"                //in Global tool install nodejs after plugin nodejs installation
-                    sh "npm fund"
-                    withsonarQubeEnv('sonar') {      //same name as in jenkins configuration: sonar 
-                        sh "npm install sonar-scanner"
-                        sh "npm run sonar"
-                    }
+                script {
+                     try {
+                         nodejs(nodeJSInstallationName: 'nodejs') {                    
+                             sh "npm install"                //in Global tool install nodejs after plugin nodejs installation 
+                     } catch (Exception e) {
+                         echo "Error occurred: ${e.getMessage()}"
+                     }
+                          withsonarQubeEnv('sonar') {      //same name as in jenkins configuration: sonar 
+                              sh "npm install sonar-scanner"
+                              sh "npm run sonar"
+                          }   
                 }
             }
         }
