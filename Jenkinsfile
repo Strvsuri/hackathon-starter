@@ -4,7 +4,7 @@ pipeline {
 
     stages {
 
-        stage ('IAC stage-main server') {
+        /*stage ('IAC stage-main server') {
             steps {
                 sshagent(['836dd61a-5f60-460f-ba5f-be6d96cfc880']) {
                     sh 'ssh -o StrictHostKeyChecking=no ansadmin@172.31.29.207'
@@ -14,7 +14,7 @@ pipeline {
                     sh 'terraform apply'
                 }           
             }
-        }  
+        } */ 
 
 
         stage('Building app') {
@@ -28,7 +28,7 @@ pipeline {
         }
  
 
-        stage ('docker image build') {
+        /*stage ('docker image build') {
             //in CLI, run ''usermod -aG docker ansadmin
             steps {
                 sshagent(['nodeapp']) {
@@ -97,6 +97,6 @@ pipeline {
                     sh 'ssh -o StrictHostKeyChecking=no ansadmin@172.31.29.207 ansible-playbook ansible.yml'
                 }
             }
-        } 
+        } */
     }
 }
