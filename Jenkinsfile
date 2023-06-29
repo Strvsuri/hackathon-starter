@@ -4,7 +4,9 @@ pipeline {
 
     stages {
         stage ('gitcheckout') {
-            git 'https://github.com/Strvsuri/hackathon-starter.git'
+            steps {
+                git 'https://github.com/Strvsuri/hackathon-starter.git'
+            }
         }
 
         
