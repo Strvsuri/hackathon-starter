@@ -3,6 +3,11 @@ pipeline {
     agent any    
 
     stages {
+        stage ('gitcheckout') {
+            git 'https://github.com/Strvsuri/hackathon-starter.git'
+        }
+
+        
 
         /*stage ('IAC stage-main server') {
             steps {
