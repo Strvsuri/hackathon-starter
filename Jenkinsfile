@@ -21,5 +21,16 @@ pipeline {
                 }
             }
         }
+
+        stage ('docker image build') {
+            //in CLI, run ''usermod -aG docker ansadmin
+            steps {
+                sshagent(['nodeapp']) {
+                    sh 'ssh -o StrictHostKeyChecking=no ubuntu@172.31.95.196'
+                    sh 'ssh -o StrictHostKeyChecking=no ubuntu@172.31.95.196 cd myproject && docker-compose build web:v1.$BUILD_ID'
+                    // maintaining version with jenkin parameters
+                }                
+            }
+        }
     }
 }
