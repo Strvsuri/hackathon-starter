@@ -68,6 +68,7 @@ pipeline {
             steps {
                 nodejs(nodeJSInstallationName: 'nodejs') {
                     sh "npm audit fix"
+                    sh "npm fund"
                     sh "npm install"                //in Global tool install nodejs after plugin nodejs installation
                     sh "npm fund"
                     withsonarQubeEnv('sonar') {      //same name as in jenkins configuration: sonar 
