@@ -74,7 +74,6 @@
     "twilio": "^3.76.0",
     "twitter-lite": "^1.1.0",
     "validator": "^13.7.0"
-    ""sonarqube": "8.9.10"
   },
   "devDependencies": {
     "chai": "^4.3.6",
